@@ -57,7 +57,7 @@ cat > "$GREETD_DIR/start-greeter" <<EOF
 for drv in /sys/class/drm/card[0-9]*/device/driver; do
     [ -e "\$drv" ] || continue
     case "\$(basename "\$(readlink -f "\$drv")")" in
-        virtio_gpu|virtio-pci|qxl|vmwgfx|bochs-drm|cirrus|vboxvideo|simpledrm)
+        virtio*|qxl|vmwgfx|bochs-drm|cirrus|vboxvideo|simpledrm)
             export WLR_NO_HARDWARE_CURSORS="\${WLR_NO_HARDWARE_CURSORS:-1}"
             break ;;
     esac
