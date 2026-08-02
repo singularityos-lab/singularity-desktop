@@ -17,6 +17,10 @@ install_data(
   install_dir: get_option('datadir') / 'xdg-desktop-portal' / 'portals'
 )
 install_data(
+  'singularity-portals.conf',
+  install_dir: get_option('datadir') / 'xdg-desktop-portal'
+)
+install_data(
   'accountsservice/com.singularity.Desktop.xml',
   install_dir: get_option('datadir') / 'accountsservice' / 'interfaces'
 )
