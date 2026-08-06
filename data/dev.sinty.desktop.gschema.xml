@@ -126,6 +126,11 @@
       <summary>Developer Mode</summary>
       <description>Whether the Developer settings page is shown.</description>
     </key>
+    <key name="bootloader-unlock-allowed" type="b">
+      <default>false</default>
+      <summary>Allow Bootloader Unlock</summary>
+      <description>Mirrors the bootloader unlock consent shown in Settings. This key is display state only and controls nothing: the authoritative consent flag is held by the privileged atom-recovery agent, which stores it where recovery and the bootloader can read it without a user session.</description>
+    </key>
     <key name="singularity-theme" type="s">
       <default>''</default>
       <summary>Singularity Theme</summary>
