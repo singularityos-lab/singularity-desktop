@@ -8,6 +8,7 @@ add_project_arguments('-D_GNU_SOURCE', language: 'c')
 wayland_scanner = find_program('wayland-scanner')
 
 wl_client_dep = dependency('wayland-client')
+xkb_dep = dependency('xkbcommon')
 
 loginui_dep = dependency('singularity-loginui',
   fallback: ['singularity-loginui', 'loginui_dep']
@@ -31,6 +32,6 @@ ls_h = custom_target('wlr-layer-shell-unstable-v1-client-protocol.h',
 
 executable('singularity-splash',
   ['src/splash_main.c', xdg_c, xdg_h, ls_c, ls_h],
-  dependencies: [wl_client_dep, loginui_dep],
+  dependencies: [wl_client_dep, xkb_dep, loginui_dep],
   install: true,
 )
