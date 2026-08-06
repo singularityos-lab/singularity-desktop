@@ -198,6 +198,43 @@ for css in style.css style.dark.css style.light.css; do
         cp "$PROJECT_DIR/subprojects/libsingularity/src/style/$css" "$OPT_SING/"
 done
 
+if [ -d "$PROJECT_DIR/subprojects/libsingularity/data/avatars" ]; then
+    mkdir -p "$OPT_SING/avatars"
+    cp -r "$PROJECT_DIR/subprojects/libsingularity/data/avatars/." "$OPT_SING/avatars/"
+    echo "  avatars"
+fi
+
+INTER_VER="4.1"
+INTER_DST="$REAL_HOME/.local/share/fonts/inter"
+if [ ! -f "$INTER_DST/Inter-Regular.ttf" ]; then
+    echo "Installing Inter font..."
+    INTER_TMP="$(mktemp -d)"
+    if curl -sL --max-time 120 -o "$INTER_TMP/inter.zip" \
+        "https://github.com/rsms/inter/releases/download/v${INTER_VER}/Inter-${INTER_VER}.zip" \
+        && unzip -q -o "$INTER_TMP/inter.zip" "extras/ttf/Inter-*.ttf" "LICENSE.txt" -d "$INTER_TMP"; then
+        mkdir -p "$INTER_DST"
+        cp "$INTER_TMP"/extras/ttf/Inter-*.ttf "$INTER_DST/"
+        cp "$INTER_TMP/LICENSE.txt" "$INTER_DST/LICENSE.txt"
+        mkdir -p "$REAL_HOME/.config/fontconfig/conf.d"
+        cat > "$REAL_HOME/.config/fontconfig/conf.d/60-inter.conf" <<'FCEOF'
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans-serif</family>
+    <prefer><family>Inter</family></prefer>
+  </alias>
+</fontconfig>
+FCEOF
+        chown -R "$REAL_USER:" "$REAL_HOME/.local/share/fonts" "$REAL_HOME/.config/fontconfig" 2>/dev/null || true
+        run_as_user fc-cache -f >/dev/null 2>&1 || true
+        echo "  Inter ${INTER_VER}"
+    else
+        echo "  WARNING: could not fetch Inter font (offline?); skipping"
+    fi
+    rm -rf "$INTER_TMP"
+fi
+
 echo "Installing GIR / typelibs..."
 GIR_SRC="$(find "$BUILD" -maxdepth 4 \( -name 'Singularity-1.0.gir' -o -name 'LibSingularity-1.0.gir' \) | head -n 1)"
 TYPELIB_SRC="$(find "$BUILD" -maxdepth 4 \( -name 'Singularity-1.0.typelib' -o -name 'LibSingularity-1.0.typelib' \) | head -n 1)"
