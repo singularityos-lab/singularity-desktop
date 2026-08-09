@@ -46,6 +46,34 @@
       <default>'center'</default>
       <summary>Dock alignment (start, center, end)</summary>
     </key>
+    <key name="panel-layout-left" type="as">
+      <default>['overview', 'workspaces', 'app-title', 'global-menu']</default>
+      <summary>Items in the left panel section</summary>
+    </key>
+    <key name="panel-layout-center" type="as">
+      <default>[]</default>
+      <summary>Items in the center panel section</summary>
+    </key>
+    <key name="panel-layout-right" type="as">
+      <default>['system', 'notifications', 'clock']</default>
+      <summary>Items in the right panel section</summary>
+    </key>
+    <key name="dock-layout-left" type="as">
+      <default>['overview']</default>
+      <summary>Items in the left dock section</summary>
+    </key>
+    <key name="dock-layout-center" type="as">
+      <default>['applications']</default>
+      <summary>Items in the center dock section</summary>
+    </key>
+    <key name="dock-layout-right" type="as">
+      <default>['system', 'clock']</default>
+      <summary>Items in the right dock section</summary>
+    </key>
+    <key name="bar-layout-edit-mode" type="b">
+      <default>false</default>
+      <summary>Edit the panel and dock layout</summary>
+    </key>
     <key name="panel-fusion" type="b">
       <default>false</default>
       <summary>Merge top panel into dock</summary>
