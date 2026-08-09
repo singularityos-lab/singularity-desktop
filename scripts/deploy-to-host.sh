@@ -296,6 +296,11 @@ if [ -f "$SING_GTK_BUILD/3.0/gtk.css" ]; then
     done
     cp "$SING_GTK_SRC/index.theme" "$SING_GTK_THEME/index.theme"
     echo "  Singularity GTK theme"
+
+    if command -v flatpak >/dev/null; then
+        echo "Installing Flatpak GTK theme..."
+        run_as_user "$PROJECT_DIR/scripts/install-flatpak-theme.sh" "$SING_GTK_THEME"
+    fi
 fi
 
 echo "Installing wallpapers..."
