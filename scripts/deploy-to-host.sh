@@ -352,6 +352,12 @@ Exec=$OPT_BIN/singularity-portal
 SystemdService=xdg-desktop-portal-singularity.service
 EOF
 
+cat > "$OPT_DBUS/org.freedesktop.secrets.service" <<EOF
+[D-BUS Service]
+Name=org.freedesktop.secrets
+Exec=$OPT_BIN/singularity-keyring
+EOF
+
 cat > "$OPT_BIN/singularity-portal" <<'SPORTAL'
 #!/bin/bash
 export WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-wayland-0}
@@ -437,26 +443,18 @@ mkdir -p "$ETC_USER_DIR"
 
 run_as_user systemctl --user stop singularity-polkit-agent.service 2>/dev/null || true
 run_as_user systemctl --user disable singularity-polkit-agent.service 2>/dev/null || true
+run_as_user systemctl --user stop singularity-keyring.service 2>/dev/null || true
+run_as_user systemctl --user disable singularity-keyring.service 2>/dev/null || true
+systemctl --global disable singularity-keyring.service 2>/dev/null || true
 rm -f "$REAL_HOME/.config/systemd/user/singularity-polkit-agent.service"
 rm -f "$REAL_HOME/.config/systemd/user/singularity-keyring.service" \
       "$REAL_HOME/.config/systemd/user/xdg-desktop-portal-singularity.service"
+rm -f "$ETC_USER_DIR/singularity-keyring.service"
 
-cat > "$ETC_USER_DIR/singularity-keyring.service" <<EOF
-[Unit]
-Description=Singularity Keyring (Secret Service)
-Documentation=https://specifications.freedesktop.org/secret-service/
-PartOf=graphical-session.target
-
-[Service]
-Type=dbus
-BusName=org.freedesktop.secrets
-ExecStart=$OPT_BIN/singularity-keyring
-Restart=on-failure
-RestartSec=2
-
-[Install]
-WantedBy=graphical-session.target
-EOF
+USER_DBUS_DIR="$REAL_HOME/.local/share/dbus-1/services"
+run_as_user mkdir -p "$USER_DBUS_DIR"
+run_as_user cp "$OPT_DBUS/org.freedesktop.secrets.service" \
+    "$USER_DBUS_DIR/org.freedesktop.secrets.service"
 
 cat > "$ETC_USER_DIR/xdg-desktop-portal-singularity.service" <<EOF
 [Unit]
@@ -490,7 +488,7 @@ Wants=graphical-session-pre.target
 After=graphical-session-pre.target
 EOF
 
-systemctl --global enable singularity-keyring.service xdg-desktop-portal-singularity.service 2>/dev/null || true
+systemctl --global enable xdg-desktop-portal-singularity.service 2>/dev/null || true
 systemctl daemon-reload 2>/dev/null || true
 run_as_user systemctl --user daemon-reload 2>/dev/null || true
 run_as_user systemctl --user restart xdg-desktop-portal.service 2>/dev/null || true
