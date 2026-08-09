@@ -28,6 +28,26 @@ sudo dnf install -y \
   libpeas2-devel \
   pipewire-devel
 
+# 2b. ...or install dependencies (Debian / Ubuntu)
+sudo apt install -y \
+  build-essential gettext gobject-introspection gstreamer1.0-pipewire \
+  gstreamer1.0-plugins-good hwdata libadwaita-1-dev libatspi2.0-dev \
+  libcairo2-dev libcmocka-dev libcrypt-dev libdbusmenu-glib-dev libdisplay-info-dev \
+  libdrm-dev libfontconfig-dev libgcrypt20-dev libgdk-pixbuf-2.0-dev \
+  libgee-0.8-dev libgirepository-1.0-dev libglib2.0-bin libglib2.0-dev \
+  libgoa-1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
+  libgtk-4-dev libgtk4-layer-shell-dev libgtksourceview-5-dev libgudev-1.0-dev \
+  libinput-dev libjson-glib-dev libliftoff-dev libnm-dev libpam0g-dev \
+  libpango1.0-dev libpeas-2-dev libpipewire-0.3-dev libpixman-1-dev \
+  libpng-dev libpolkit-agent-1-dev libpolkit-gobject-1-dev libpoppler-glib-dev \
+  libpulse-dev librsvg2-dev libseat-dev libsecret-1-dev libsodium-dev \
+  libsoup-3.0-dev libsystemd-dev libtracker-sparql-3.0-dev libupower-glib-dev \
+  libvte-2.91-gtk4-dev libwayland-dev libwebkitgtk-6.0-dev libxcb-composite0-dev \
+  libxcb-dri3-dev libxcb-errors-dev libxcb-ewmh-dev libxcb-icccm4-dev \
+  libxcb-present-dev libxcb-render0-dev libxcb-res0-dev libxcb-xfixes0-dev \
+  libxcb1-dev libxkbcommon-dev libxml2-dev meson ninja-build pkg-config \
+  sassc scdoc valac wayland-protocols xwayland
+
 # 3. Build
 meson setup build
 ninja -C build
@@ -44,6 +64,39 @@ Optional runtime: install `appmenu-gtk-module` (Debian/Ubuntu
 third-party GTK apps publish their menu bar to the panel global menu. First-party
 apps do not need it. Firefox only exports its menu over X11, so its global menu
 shows only under XWayland (`MOZ_ENABLE_WAYLAND=0`).
+
+---
+
+## Architecture support
+
+Singularity builds and runs on both **x86_64** and **aarch64 (arm64)**. The aarch64
+build needs no source changes and no architecture guards — the C Wayland bindings, the
+Vala shell, `libsingularity`, the portal and the bundled labwc/wlroots all compile as-is.
+
+Verified on the CIX Sky1 (CD8180) SoC in an `ubuntu:26.04` aarch64 container:
+
+```
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+C compiler: gcc 15.2.0
+Vala compiler: valac 0.56.18
+Meson: 1.10.1
+```
+
+---
+
+## Building vetro (UI transpiler host tool)
+
+`subprojects/singularity-calculator`, `singularity-calendar` and `singularity-demo`
+transpile their `.vetro` UI files to `.ui` at build time via `find_program('vetro')`.
+That lookup is mandatory, so if your distribution has no `vetro` package the build fails
+at `meson setup`. Build it from source (needs Go 1.24+) and put it on `PATH` first:
+
+```bash
+git clone https://github.com/singularityos-lab/vetro
+cd vetro && go build -o vetro .
+install -Dm755 vetro ~/.local/bin/vetro   # ensure ~/.local/bin is on PATH
+```
 
 ---
 
