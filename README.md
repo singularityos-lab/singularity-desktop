@@ -12,8 +12,9 @@ sharing the [libsingularity](subprojects/libsingularity) toolkit.
 - GTK4 >= 4.6 and gtk4-layer-shell
 - libdecor (runtime, client-side window decorations for GTK and Qt apps)
 - Qt 6 xdgdesktopportal platform theme plugin (runtime, so Qt apps follow the
-  dark/light and accent settings via the XDG settings portal). It ships with Qt
-  6 qtbase: Fedora `qt6-qtbase-gui`, Arch `qt6-base`, Debian/Ubuntu `qt6-base`
+  dark/light and accent settings via the XDG settings portal). Fedora:
+  `qt6-qtbase-gui`; Arch: `qt6-base`; Debian/Ubuntu:
+  `qt6-xdgdesktopportal-platformtheme`
 - `appmenu-gtk-module` (runtime, optional) so third-party GTK apps publish their
   menu bar to the panel global menu. Debian/Ubuntu `appmenu-gtk3-module` (plus
   `appmenu-gtk2-module` for GTK 2), Arch `appmenu-gtk-module` (AUR); on Fedora it
