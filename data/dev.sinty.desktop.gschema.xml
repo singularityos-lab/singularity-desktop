@@ -51,7 +51,7 @@
       <summary>Items in the left panel section</summary>
     </key>
     <key name="panel-layout-center" type="as">
-      <default>[]</default>
+      <default>['tiling-position']</default>
       <summary>Items in the center panel section</summary>
     </key>
     <key name="panel-layout-right" type="as">
@@ -258,6 +258,17 @@
       <default>false</default>
       <summary>Enable Tiling</summary>
       <description>Whether tiling window management is enabled.</description>
+    </key>
+    <key name="tiling-layout" type="s">
+      <default>'grid'</default>
+      <summary>Tiling Layout</summary>
+      <description>Window arrangement used by automatic tiling.</description>
+    </key>
+    <key name="tiling-column-width" type="i">
+      <range min="35" max="100"/>
+      <default>60</default>
+      <summary>Scrolling Tiling Column Width</summary>
+      <description>Width of each scrolling tiling column as a percentage of the work area.</description>
     </key>
     <key name="preview-features-enabled" type="b">
       <default>false</default>
