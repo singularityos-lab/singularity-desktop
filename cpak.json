@@ -7,7 +7,8 @@
   "image": "ghcr.io/singularityos-lab/singularity-desktop:master",
   "image_ref": "source",
   "binaries": [
-    "/opt/singularity/bin/singularity-cpak-session"
+    "/opt/singularity/bin/singularity-cpak-session",
+    "/opt/singularity/bin/singularity-labwc-session"
   ],
   "dependencies": [
     {
@@ -16,6 +17,64 @@
     }
   ],
   "addons": [],
+  "sessions": [
+    {
+      "id": "dev.sinty.singularity",
+      "name": "Singularity Desktop",
+      "description": "Singularity Desktop Environment",
+      "kind": "desktop",
+      "entrypoint": "/opt/singularity/bin/singularity-labwc-session",
+      "override": {
+        "socketX11": false,
+        "socketWayland": false,
+        "socketPulseAudio": true,
+        "socketSessionBus": true,
+        "socketSystemBus": true,
+        "socketSshAgent": false,
+        "socketCups": true,
+        "socketGpgAgent": false,
+        "socketAtSpiBus": true,
+        "socketBluetooth": false,
+        "deviceDri": true,
+        "deviceKvm": false,
+        "deviceShm": true,
+        "deviceAlsa": false,
+        "deviceVideo": false,
+        "deviceFuse": false,
+        "deviceTun": false,
+        "deviceUsb": false,
+        "deviceInput": true,
+        "deviceTTY": true,
+        "deviceAll": false,
+        "notification": false,
+        "openURI": false,
+        "hostApplications": true,
+        "filesystem": [
+          { "path": "xdg-desktop", "access": "read-write" },
+          { "path": "xdg-documents", "access": "read-write" },
+          { "path": "xdg-download", "access": "read-write" },
+          { "path": "xdg-music", "access": "read-write" },
+          { "path": "xdg-pictures", "access": "read-write" },
+          { "path": "xdg-public-share", "access": "read-write" },
+          { "path": "xdg-templates", "access": "read-write" },
+          { "path": "xdg-videos", "access": "read-write" }
+        ],
+        "env": [
+          "PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LD_LIBRARY_PATH=/opt/singularity/lib",
+          "XDG_DATA_DIRS=/opt/singularity/share:/usr/local/share:/usr/share",
+          "XDG_CONFIG_DIRS=/opt/singularity/etc/xdg:/etc/xdg"
+        ],
+        "network": true,
+        "process": false,
+        "userNamespaces": false,
+        "memoryMaxMB": 0,
+        "cpuQuota": 0,
+        "pidsMax": 0,
+        "asRoot": false
+      }
+    }
+  ],
   "idle_time": 0,
   "override": {
     "socketX11": false,
