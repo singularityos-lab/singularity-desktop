@@ -101,7 +101,8 @@ RUN meson setup build \
       --force-fallback-for=wlroots-0.20 && \
     meson compile -C subprojects/labwc/build && \
     DESTDIR=/stage meson install -C build && \
-    DESTDIR=/stage meson install -C subprojects/labwc/build
+    DESTDIR=/stage meson install -C subprojects/labwc/build && \
+    glib-compile-schemas /stage/opt/singularity/share/glib-2.0/schemas
 
 COPY cpak/singularity-cpak-headless-session /stage/opt/singularity/bin/singularity-cpak-headless-session
 COPY cpak/singularity-cpak-session /stage/opt/singularity/bin/singularity-cpak-session
