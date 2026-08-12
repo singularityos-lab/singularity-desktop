@@ -19,4 +19,14 @@ if [ -z "$owner" ] || ! kill -0 "$owner" 2>/dev/null; then
     chmod 0444 "$lock"
 fi
 
+if [ -n "${CPAK_DESKTOP_RUNTIME:-}" ]; then
+    outer_wayland="${WAYLAND_DISPLAY:-wayland-0}"
+    case "$outer_wayland" in
+        /*) ;;
+        *) outer_wayland="${XDG_RUNTIME_DIR}/${outer_wayland}" ;;
+    esac
+    export XDG_RUNTIME_DIR="$CPAK_DESKTOP_RUNTIME"
+    export WAYLAND_DISPLAY="$outer_wayland"
+fi
+
 exec /opt/singularity/bin/singularity-labwc-session "$@"

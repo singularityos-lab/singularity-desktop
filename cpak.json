@@ -39,7 +39,17 @@
     "deviceAll": false,
     "notification": false,
     "openURI": false,
-    "filesystem": [],
+    "hostApplications": true,
+    "filesystem": [
+      { "path": "xdg-desktop", "access": "read-write" },
+      { "path": "xdg-documents", "access": "read-write" },
+      { "path": "xdg-download", "access": "read-write" },
+      { "path": "xdg-music", "access": "read-write" },
+      { "path": "xdg-pictures", "access": "read-write" },
+      { "path": "xdg-public-share", "access": "read-write" },
+      { "path": "xdg-templates", "access": "read-write" },
+      { "path": "xdg-videos", "access": "read-write" }
+    ],
     "env": [
       "PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
       "LD_LIBRARY_PATH=/opt/singularity/lib",
