@@ -1,0 +1,6 @@
+.git
+build
+build-*
+fingerprint.json
+subprojects/*/build
+subprojects/*/build-*

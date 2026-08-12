@@ -1,0 +1,14 @@
+#!/bin/sh
+
+export GSK_RENDERER=cairo
+export LIBGL_ALWAYS_SOFTWARE=1
+export WLR_BACKENDS=headless
+export WLR_LIBINPUT_NO_DEVICES=1
+export WLR_RENDERER=pixman
+export XDG_RUNTIME_DIR="/tmp/singularity-cpak-headless-$(id -u)"
+unset WAYLAND_DISPLAY
+
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 0700 "$XDG_RUNTIME_DIR"
+
+exec /opt/singularity/bin/singularity-cpak-session

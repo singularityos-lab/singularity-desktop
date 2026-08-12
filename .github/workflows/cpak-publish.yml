@@ -1,0 +1,70 @@
+name: Publish cpak images
+
+on:
+  push:
+    branches: [master]
+    tags: ['*']
+    paths:
+      - '.github/workflows/cpak-publish.yml'
+      - '.dockerignore'
+      - 'Containerfile'
+      - 'cpak.json'
+      - 'cpak/**'
+      - 'data/**'
+      - 'meson.build'
+      - 'meson_options.txt'
+      - 'subprojects/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+
+concurrency:
+  group: publish-cpak-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          submodules: recursive
+
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: desktop-meta
+        uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051
+        with:
+          images: ghcr.io/singularityos-lab/singularity-desktop
+          tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=sha,prefix=sha-
+
+      - id: desktop
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
+        with:
+          context: .
+          file: Containerfile
+          target: desktop
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.desktop-meta.outputs.tags }}
+          labels: ${{ steps.desktop-meta.outputs.labels }}
+          cache-from: type=gha,scope=singularity-desktop
+          cache-to: type=gha,mode=max,scope=singularity-desktop
+          provenance: mode=max
+          sbom: true
+
+      - name: Publish summary
+        run: echo "ghcr.io/singularityos-lab/singularity-desktop@${{ steps.desktop.outputs.digest }}" >> "$GITHUB_STEP_SUMMARY"

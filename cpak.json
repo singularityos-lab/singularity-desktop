@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v2.json",
+  "manifest_version": "2.0",
+  "name": "Singularity Desktop",
+  "description": "The complete Singularity desktop session.",
+  "version": "0.1.0",
+  "image": "ghcr.io/singularityos-lab/singularity-desktop:master",
+  "image_ref": "source",
+  "binaries": [
+    "/opt/singularity/bin/singularity-cpak-session"
+  ],
+  "dependencies": [
+    {
+      "origin": "github.com/singularityos-lab/singularity-runtime",
+      "mode": "layer"
+    }
+  ],
+  "addons": [],
+  "idle_time": 0,
+  "override": {
+    "socketX11": false,
+    "socketWayland": true,
+    "socketPulseAudio": true,
+    "socketSessionBus": false,
+    "socketSystemBus": false,
+    "socketSshAgent": false,
+    "socketCups": false,
+    "socketGpgAgent": false,
+    "socketAtSpiBus": false,
+    "socketBluetooth": false,
+    "deviceDri": true,
+    "deviceKvm": false,
+    "deviceShm": true,
+    "deviceAlsa": false,
+    "deviceVideo": false,
+    "deviceFuse": false,
+    "deviceTun": false,
+    "deviceUsb": false,
+    "deviceAll": false,
+    "notification": false,
+    "openURI": false,
+    "filesystem": [],
+    "env": [
+      "PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LD_LIBRARY_PATH=/opt/singularity/lib",
+      "XDG_DATA_DIRS=/opt/singularity/share:/usr/local/share:/usr/share",
+      "XDG_CONFIG_DIRS=/opt/singularity/etc/xdg:/etc/xdg",
+      "WLR_BACKENDS=wayland",
+      "WLR_LIBINPUT_NO_DEVICES=1"
+    ],
+    "network": true,
+    "process": false,
+    "userNamespaces": false,
+    "memoryMaxMB": 0,
+    "cpuQuota": 0,
+    "pidsMax": 0,
+    "asRoot": false,
+    "allowedHostCommands": []
+  }
+}
