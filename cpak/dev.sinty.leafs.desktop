@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Runtime Terminal
+GenericName=Terminal
+Comment=Open a terminal inside the cpak runtime
+Icon=dev.sinty.leafs
+Exec=singularity-leafs
+Terminal=false
+Categories=System;TerminalEmulator;
+Keywords=terminal;shell;console;runtime;
+StartupNotify=true
+StartupWMClass=dev.sinty.leafs

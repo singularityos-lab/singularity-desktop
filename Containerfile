@@ -106,6 +106,7 @@ RUN meson setup build \
 
 COPY cpak/singularity-cpak-headless-session /stage/opt/singularity/bin/singularity-cpak-headless-session
 COPY cpak/singularity-cpak-session /stage/opt/singularity/bin/singularity-cpak-session
+COPY cpak/dev.sinty.leafs.desktop /stage/opt/singularity/share/applications/dev.sinty.leafs.desktop
 
 FROM scratch AS desktop
 
