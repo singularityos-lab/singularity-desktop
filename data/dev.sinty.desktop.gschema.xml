@@ -228,6 +228,21 @@
       <summary>Open Settings in window</summary>
       <description>When enabled, the Settings button opens a dedicated Settings window instead of using the sidebar.</description>
     </key>
+    <key name="quick-settings-tile-order" type="as">
+      <default>['wifi', 'bluetooth', 'theme', 'night-light', 'airplane-mode', 'keyboard-light', 'audio', 'power-profile', 'do-not-disturb', 'vpn', 'tiling', 'hotspot', 'game-mode']</default>
+      <summary>Quick settings tile order</summary>
+      <description>Order of tiles in the quick settings editor.</description>
+    </key>
+    <key name="quick-settings-active-tiles" type="as">
+      <default>['wifi', 'bluetooth', 'theme', 'night-light', 'airplane-mode', 'keyboard-light', 'audio', 'power-profile', 'do-not-disturb', 'vpn', 'tiling', 'hotspot', 'game-mode']</default>
+      <summary>Visible quick settings tiles</summary>
+      <description>Tiles shown in quick settings.</description>
+    </key>
+    <key name="quick-settings-compact" type="b">
+      <default>false</default>
+      <summary>Compact quick settings tiles</summary>
+      <description>Show quick settings tiles as compact icon controls.</description>
+    </key>
 
     <key name="high-contrast" type="b">
       <default>false</default>
