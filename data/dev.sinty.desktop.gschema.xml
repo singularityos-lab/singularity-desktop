@@ -149,6 +149,32 @@
       <summary>Adaptive Night End</summary>
       <description>Time of day (HH:MM) at which the adaptive theme returns to the chosen day mode.</description>
     </key>
+    <key name="night-light-enabled" type="b">
+      <default>false</default>
+      <summary>Night Light</summary>
+      <description>Whether the warm night-light color temperature is applied.</description>
+    </key>
+    <key name="night-light-temperature" type="i">
+      <default>4000</default>
+      <range min="1000" max="6500"/>
+      <summary>Night Light Temperature</summary>
+      <description>Color temperature in Kelvin applied while night light is active.</description>
+    </key>
+    <key name="night-light-adaptive" type="b">
+      <default>false</default>
+      <summary>Adaptive Night Light</summary>
+      <description>When enabled, night light follows a daily schedule instead of a manual switch.</description>
+    </key>
+    <key name="night-light-adaptive-from" type="s">
+      <default>'19:00'</default>
+      <summary>Night Light Start</summary>
+      <description>Time of day (HH:MM) at which adaptive night light turns on.</description>
+    </key>
+    <key name="night-light-adaptive-to" type="s">
+      <default>'07:00'</default>
+      <summary>Night Light End</summary>
+      <description>Time of day (HH:MM) at which adaptive night light turns off.</description>
+    </key>
     <key name="developer-mode" type="b">
       <default>false</default>
       <summary>Developer Mode</summary>
