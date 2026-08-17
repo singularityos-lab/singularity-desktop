@@ -289,11 +289,11 @@
       <range min="0" max="64"/>
       <default>12</default>
       <summary>Tiling Gap</summary>
-      <description>Space between tiled windows and the work area edge.</description>
+      <description>Space between tiled windows.</description>
     </key>
     <key name="window-border-width" type="i">
       <range min="0" max="8"/>
-      <default>1</default>
+      <default>3</default>
       <summary>Window Border Width</summary>
       <description>Width of the accent-colored window border.</description>
     </key>
