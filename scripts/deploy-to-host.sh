@@ -424,6 +424,14 @@ run_as_user mkdir -p "$REAL_HOME/.config/labwc"
 install -o "$REAL_USER" -g "$REAL_USER" -m 0644 \
     "$SESSION_SRC/config/labwc/themerc" "$REAL_HOME/.config/labwc/themerc"
 
+if command -v python3 >/dev/null 2>&1; then
+    run_as_user python3 "$SESSION_SRC/scripts/migrate-labwc-rc.py" \
+        "$SESSION_SRC/config/labwc/rc.xml" \
+        "$REAL_HOME/.config/labwc/rc.xml" \
+        --state "$REAL_HOME/.local/state/singularity/labwc-keybinds" \
+        2>&1 | sed 's/^/  /'
+fi
+
 PORTALS_CONF_DIR="$REAL_HOME/.config/xdg-desktop-portal"
 run_as_user mkdir -p "$PORTALS_CONF_DIR"
 cat > "$PORTALS_CONF_DIR/singularity-portals.conf" <<EOF
