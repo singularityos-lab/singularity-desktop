@@ -129,6 +129,23 @@
       <summary>Theme Mode</summary>
       <description>Appearance mode: 'dual' (dark shell, light apps), 'light' (light shell and apps), or 'dark' (dark shell and apps).</description>
     </key>
+    <key name="background-effect" type="s">
+      <default>'disabled'</default>
+      <summary>Background Effect</summary>
+      <description>Material applied behind translucent desktop surfaces: disabled, glass, or blur.</description>
+    </key>
+    <key name="window-transparency" type="i">
+      <range min="0" max="90"/>
+      <default>12</default>
+      <summary>Window Transparency</summary>
+      <description>Percentage of app window background transparency while a background effect is active.</description>
+    </key>
+    <key name="blur-strength" type="i">
+      <range min="0" max="100"/>
+      <default>60</default>
+      <summary>Blur Strength</summary>
+      <description>Strength of the compositor blur used by background materials.</description>
+    </key>
     <key name="dark-mode" type="b">
       <default>true</default>
       <summary>Dark Mode</summary>
