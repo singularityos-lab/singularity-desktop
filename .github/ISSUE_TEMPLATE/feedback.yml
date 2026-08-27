@@ -12,14 +12,36 @@ body:
   - type: dropdown
     id: area
     attributes:
-      label: Area
+      label: Component / area
+      description: Choose the closest match. Select Not sure if you do not know.
       options:
-        - Shell (panel, dock, overview, control center)
-        - An app
-        - Greeter / login
-        - Build / install
-        - Compositor / labwc
-        - The website / docs
-        - Other / not sure
+        - Not sure
+        - Shell, panel, dock and overview
+        - Settings and control center
+        - Window management and labwc
+        - Desktop session and startup
+        - Greeter, lock screen and login UI
+        - Notifications
+        - Files
+        - Leafs terminal
+        - Edit
+        - Write
+        - Store
+        - Monitor
+        - Calculator
+        - Calendar
+        - Git
+        - Music
+        - Photos
+        - Videos
+        - Keyring and authentication
+        - Plugins and widgets
+        - Themes and wallpapers
+        - Desktop portal and screen capture
+        - libsingularity and shared UI
+        - Desktop build, packaging and installation
+        - Website and documentation
+        - Developer tools and demo
+        - Other
     validations:
       required: true
