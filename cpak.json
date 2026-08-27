@@ -1,11 +1,10 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v2.json",
-  "manifest_version": "2.0",
+  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v3.json",
+  "manifest_version": "3.0",
   "name": "Singularity Desktop",
   "description": "The complete Singularity desktop session.",
   "version": "0.1.0",
-  "image": "ghcr.io/singularityos-lab/singularity-desktop:master",
-  "image_ref": "source",
+  "image": "ghcr.io/singularityos-lab/singularity-desktop@sha256:9929b7562984f23e9cec86b949c6e06d2d2e537dfcd6d55db4d7a378c0e76944",
   "binaries": [
     "/opt/singularity/bin/singularity-cpak-session",
     "/opt/singularity/bin/singularity-labwc-session"
@@ -25,16 +24,11 @@
       "kind": "desktop",
       "entrypoint": "/opt/singularity/bin/singularity-labwc-session",
       "override": {
-        "socketX11": false,
         "socketWayland": false,
         "socketPulseAudio": true,
-        "socketSessionBus": true,
-        "socketSystemBus": true,
         "socketSshAgent": false,
         "socketCups": true,
         "socketGpgAgent": false,
-        "socketAtSpiBus": true,
-        "socketBluetooth": false,
         "deviceDri": true,
         "deviceKvm": false,
         "deviceShm": true,
@@ -50,14 +44,38 @@
         "openURI": false,
         "hostApplications": true,
         "filesystem": [
-          { "path": "xdg-desktop", "access": "read-write" },
-          { "path": "xdg-documents", "access": "read-write" },
-          { "path": "xdg-download", "access": "read-write" },
-          { "path": "xdg-music", "access": "read-write" },
-          { "path": "xdg-pictures", "access": "read-write" },
-          { "path": "xdg-public-share", "access": "read-write" },
-          { "path": "xdg-templates", "access": "read-write" },
-          { "path": "xdg-videos", "access": "read-write" }
+          {
+            "path": "xdg-desktop",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-documents",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-download",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-music",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-pictures",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-public-share",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-templates",
+            "access": "read-write"
+          },
+          {
+            "path": "xdg-videos",
+            "access": "read-write"
+          }
         ],
         "env": [
           "PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -77,16 +95,11 @@
   ],
   "idle_time": 0,
   "override": {
-    "socketX11": false,
     "socketWayland": true,
     "socketPulseAudio": true,
-    "socketSessionBus": false,
-    "socketSystemBus": false,
     "socketSshAgent": false,
     "socketCups": false,
     "socketGpgAgent": false,
-    "socketAtSpiBus": false,
-    "socketBluetooth": false,
     "deviceDri": true,
     "deviceKvm": false,
     "deviceShm": true,
@@ -100,14 +113,38 @@
     "openURI": false,
     "hostApplications": true,
     "filesystem": [
-      { "path": "xdg-desktop", "access": "read-write" },
-      { "path": "xdg-documents", "access": "read-write" },
-      { "path": "xdg-download", "access": "read-write" },
-      { "path": "xdg-music", "access": "read-write" },
-      { "path": "xdg-pictures", "access": "read-write" },
-      { "path": "xdg-public-share", "access": "read-write" },
-      { "path": "xdg-templates", "access": "read-write" },
-      { "path": "xdg-videos", "access": "read-write" }
+      {
+        "path": "xdg-desktop",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-documents",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-download",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-music",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-pictures",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-public-share",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-templates",
+        "access": "read-write"
+      },
+      {
+        "path": "xdg-videos",
+        "access": "read-write"
+      }
     ],
     "env": [
       "PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -123,7 +160,6 @@
     "memoryMaxMB": 0,
     "cpuQuota": 0,
     "pidsMax": 0,
-    "asRoot": false,
-    "allowedHostCommands": []
+    "asRoot": false
   }
 }
