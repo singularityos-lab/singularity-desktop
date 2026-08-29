@@ -27,6 +27,7 @@ if [ -n "${CPAK_DESKTOP_RUNTIME:-}" ]; then
     esac
     export XDG_RUNTIME_DIR="$CPAK_DESKTOP_RUNTIME"
     export WAYLAND_DISPLAY="$outer_wayland"
+    unset DBUS_SESSION_BUS_ADDRESS
 fi
 
 exec /opt/singularity/bin/singularity-labwc-session "$@"
