@@ -110,3 +110,7 @@
 [submodule "subprojects/singularity-installer"]
 	path = subprojects/singularity-installer
 	url = https://github.com/singularityos-lab/singularity-installer.git
+[submodule "subprojects/singularity-gestures"]
+	path = subprojects/singularity-gestures
+	url = https://github.com/singularityos-lab/singularity-gestures.git
+	branch = main

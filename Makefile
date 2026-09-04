@@ -1,10 +1,11 @@
 BUILD_DIR = build
 LABWC_DIR = subprojects/labwc
 LABWC_BUILD = $(LABWC_DIR)/build
+GESTURE_DIR = subprojects/singularity-gestures
 
 all: compile
 
-$(BUILD_DIR)/build.ninja:
+$(BUILD_DIR)/build.ninja: | gesture-runtime
 	meson setup $(BUILD_DIR) || { rm -rf $(BUILD_DIR); meson setup $(BUILD_DIR); }
 
 $(LABWC_BUILD)/build.ninja:
@@ -13,7 +14,7 @@ $(LABWC_BUILD)/build.ninja:
 labwc: $(LABWC_BUILD)/build.ninja
 	meson compile -C $(LABWC_BUILD)
 
-compile: $(BUILD_DIR)/build.ninja labwc
+compile: gesture-runtime $(BUILD_DIR)/build.ninja labwc
 	ninja -C $(BUILD_DIR) subprojects/libsingularity/Singularity-1.0.gir
 	mkdir -p $(HOME)/.local/share/gir-1.0
 	cp $(BUILD_DIR)/subprojects/libsingularity/Singularity-1.0.gir $(HOME)/.local/share/gir-1.0/
@@ -60,6 +61,16 @@ deploy-host:
 	@echo "      the install and deploy processes have been unified."
 	@$(MAKE) install
 
+gesture-runtime:
+	@test -f $(GESTURE_DIR)/runtime/libmediapipe.so \
+		-a -f $(GESTURE_DIR)/runtime/hand_landmarker.task \
+		-a -f $(GESTURE_DIR)/runtime/face_landmarker.task \
+		-a -f $(GESTURE_DIR)/runtime/libonnxruntime.so \
+		-a -f $(GESTURE_DIR)/runtime/mobileone_s0_gaze.onnx \
+		-a -f $(GESTURE_DIR)/runtime/include/onnxruntime_c_api.h \
+		-a -f $(GESTURE_DIR)/runtime/include/onnxruntime_ep_c_api.h \
+		|| bash $(GESTURE_DIR)/scripts/bootstrap-runtime.sh
+
 install-greeter:
 	@if [ -n "$$container" ]; then \
 		host-spawn run0 bash $(CURDIR)/scripts/install-greeter.sh; \
@@ -67,4 +78,4 @@ install-greeter:
 		run0 bash $(CURDIR)/scripts/install-greeter.sh; \
 	fi
 
-.PHONY: all compile labwc clean install run reconfigure schemas deploy-host install-session install-greeter
+.PHONY: all compile labwc gesture-runtime clean install run reconfigure schemas deploy-host install-session install-greeter

@@ -35,7 +35,7 @@
         "deviceKvm": false,
         "deviceShm": true,
         "deviceAlsa": false,
-        "deviceVideo": false,
+        "deviceVideo": true,
         "deviceFuse": false,
         "deviceTun": false,
         "deviceUsb": false,

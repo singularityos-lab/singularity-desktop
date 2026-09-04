@@ -10,6 +10,7 @@ subdir('po')
 
 subproject('libsingularity')
 subproject('singularity-loginui')
+subproject('singularity-gestures')
 
 subproject('xdg-desktop-portal-singularity')
 subproject('singularity-polkit-agent')

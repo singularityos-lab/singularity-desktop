@@ -79,6 +79,7 @@ echo "Deploying Singularity to $PREFIX ..."
 echo "Installing binaries..."
 for bin in singularity-desktop \
            singularity-region-picker singularity-screenshot \
+           singularity-hand-control singularity-gesture-lab \
            singularity-polkit-agent singularity-greeter singularity-splash \
            xdg-desktop-portal-singularity singularity-screencast-chooser; do
     bin_path=$(find "$BUILD" -name "$bin" -executable -type f | head -n 1)
@@ -143,6 +144,25 @@ if [ -f "$BUILD/subprojects/libsingularity/libsingularity-system.so.0.1.0" ]; th
     ln -sf libsingularity-system.so.0.1.0 "$OPT_LIB/libsingularity-system.so.0"
     ln -sf libsingularity-system.so.0.1.0 "$OPT_LIB/libsingularity-system.so"
     echo "  libsingularity-system.so.0.1.0"
+fi
+
+GESTURE_LIB="$BUILD/subprojects/singularity-gestures/libsingularity-gesture.so.0.1.0"
+if [ -f "$GESTURE_LIB" ]; then
+    acopy "$GESTURE_LIB" "$OPT_LIB/libsingularity-gesture.so.0.1.0"
+    ln -sf libsingularity-gesture.so.0.1.0 "$OPT_LIB/libsingularity-gesture.so.0"
+    ln -sf libsingularity-gesture.so.0.1.0 "$OPT_LIB/libsingularity-gesture.so"
+    echo "  libsingularity-gesture.so.0.1.0"
+fi
+
+GESTURE_RUNTIME="$PROJECT_DIR/subprojects/singularity-gestures/runtime"
+if [ -d "$GESTURE_RUNTIME" ]; then
+    mkdir -p "$OPT_SING/gestures/runtime"
+    for asset in libmediapipe.so hand_landmarker.task face_landmarker.task \
+                 libonnxruntime.so mobileone_s0_gaze.onnx; do
+        [ -f "$GESTURE_RUNTIME/$asset" ] && \
+            acopy "$GESTURE_RUNTIME/$asset" "$OPT_SING/gestures/runtime/$asset"
+    done
+    echo "  gesture runtime"
 fi
 
 if [ -d "$BUILD/extra-libs" ]; then

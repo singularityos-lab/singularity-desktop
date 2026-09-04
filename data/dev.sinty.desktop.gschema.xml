@@ -124,6 +124,11 @@
       <default>{}</default>
       <summary>Map of action names to custom accelerator strings</summary>
     </key>
+    <key name="hand-control-enabled" type="b">
+      <default>false</default>
+      <summary>Hand Control</summary>
+      <description>Control the desktop using camera-tracked hand gestures.</description>
+    </key>
     <key name="theme-mode" type="s">
       <default>'dual'</default>
       <summary>Theme Mode</summary>
