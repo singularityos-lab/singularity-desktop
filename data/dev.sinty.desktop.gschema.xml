@@ -116,6 +116,16 @@
       <default>''</default>
       <summary>URI of the background picture</summary>
     </key>
+    <key name="background-attribution-title" type="s">
+      <default>''</default>
+      <summary>Attribution title for the current background</summary>
+      <description>Display name/caption for the current wallpaper, sourced from an online provider (e.g. Openverse, Unsplash). Empty for locally-supplied or unattributed backgrounds.</description>
+    </key>
+    <key name="background-attribution-author" type="s">
+      <default>''</default>
+      <summary>Attribution author for the current background</summary>
+      <description>Creator name/credit for the current wallpaper, sourced from an online provider. Empty for locally-supplied or unattributed backgrounds.</description>
+    </key>
     <key name="recent-wallpapers" type="as">
       <default>[]</default>
       <summary>List of recently used wallpaper URIs</summary>
@@ -271,6 +281,12 @@
       <default>false</default>
       <summary>Show Desktop Icons</summary>
       <description>Whether to show icons from the configured desktop folder.</description>
+    </key>
+
+    <key name="show-wallpaper-attribution" type="b">
+      <default>true</default>
+      <summary>Show Wallpaper Info</summary>
+      <description>Display the wallpaper's title and photographer credit as an overlay on the desktop background.</description>
     </key>
 
     <key name="show-battery-percentage" type="b">
