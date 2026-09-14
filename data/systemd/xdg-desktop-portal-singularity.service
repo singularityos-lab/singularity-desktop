@@ -6,6 +6,14 @@ After=graphical-session.target
 [Service]
 Type=dbus
 BusName=org.freedesktop.impl.portal.desktop.singularity
+# GSettings only searches XDG_DATA_DIRS (plus /usr/share) for schemas by
+# default. None of this unit's own install prefixes are on that path unless
+# something else adds them, so every gsettings call -- including the ones the
+# Settings portal makes on construction -- fails "No such schema" and aborts
+# (g_settings_new is a fatal error, not a catchable one). Listing every
+# prefix this ExecStart already searches for the binary keeps the two lists
+# in sync regardless of which one actually wins.
+Environment=XDG_DATA_DIRS=/opt/singularity/share:/opt/local/share:/opt/share:%h/.local/singularity/share:/usr/local/share:/usr/share
 ExecStart=/bin/sh -c 'for d in /opt/local/bin /opt/bin /usr/local/bin %h/.local/singularity/bin /usr/bin; do if [ -x "$d/xdg-desktop-portal-singularity" ]; then exec "$d/xdg-desktop-portal-singularity"; fi; done; exit 1'
 Restart=on-failure
 RestartSec=2
