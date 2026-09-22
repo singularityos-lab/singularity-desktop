@@ -221,6 +221,11 @@
       <summary>Night Light End</summary>
       <description>Time of day (HH:MM) at which adaptive night light turns off.</description>
     </key>
+    <key name="night-light-dark-theme" type="b">
+      <default>false</default>
+      <summary>Dark Theme with Night Light</summary>
+      <description>When enabled, the appearance switches to dark while the adaptive night light schedule is active.</description>
+    </key>
     <key name="developer-mode" type="b">
       <default>false</default>
       <summary>Developer Mode</summary>
