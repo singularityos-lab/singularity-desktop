@@ -1,6 +1,9 @@
 BUILD_DIR = build
 LABWC_DIR = subprojects/labwc
 LABWC_BUILD = $(LABWC_DIR)/build
+LIBINPUT_DIR = subprojects/libinput
+LIBINPUT_BUILD = $(LIBINPUT_DIR)/build
+LIBINPUT_OPTIONS = --prefix=/usr --buildtype=release -Ddocumentation=false -Ddebug-gui=false -Dtests=false -Dlibwacom=true -Dlua-plugins=disabled
 GESTURE_DIR = subprojects/singularity-gestures
 GESTURES ?= enabled
 MESON_OPTIONS = -Dgestures=$(GESTURES)
@@ -16,14 +19,20 @@ $(LABWC_BUILD)/build.ninja:
 labwc: $(LABWC_BUILD)/build.ninja
 	meson compile -C $(LABWC_BUILD)
 
-compile: gesture-runtime $(BUILD_DIR)/build.ninja labwc
+$(LIBINPUT_BUILD)/build.ninja:
+	meson setup $(LIBINPUT_BUILD) $(LIBINPUT_DIR) $(LIBINPUT_OPTIONS) || { rm -rf $(LIBINPUT_BUILD); meson setup $(LIBINPUT_BUILD) $(LIBINPUT_DIR) $(LIBINPUT_OPTIONS); }
+
+libinput: $(LIBINPUT_BUILD)/build.ninja
+	meson compile -C $(LIBINPUT_BUILD)
+
+compile: gesture-runtime $(BUILD_DIR)/build.ninja labwc libinput
 	ninja -C $(BUILD_DIR) subprojects/libsingularity/Singularity-1.0.gir
 	mkdir -p $(HOME)/.local/share/gir-1.0
 	cp $(BUILD_DIR)/subprojects/libsingularity/Singularity-1.0.gir $(HOME)/.local/share/gir-1.0/
 	meson compile -C $(BUILD_DIR)
 
 clean:
-	rm -rf $(BUILD_DIR) $(LABWC_BUILD)
+	rm -rf $(BUILD_DIR) $(LABWC_BUILD) $(LIBINPUT_BUILD)
 
 install: compile
 	@if [ -n "$$container" ]; then \
@@ -84,4 +93,4 @@ install-greeter:
 		run0 bash $(CURDIR)/scripts/install-greeter.sh; \
 	fi
 
-.PHONY: all compile labwc gesture-runtime clean install run reconfigure schemas deploy-host install-session install-greeter
+.PHONY: all compile labwc libinput gesture-runtime clean install run reconfigure schemas deploy-host install-session install-greeter

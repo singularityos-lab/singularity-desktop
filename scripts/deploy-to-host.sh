@@ -133,6 +133,12 @@ if [ -n "$LABWC_BIN" ] && [ "$LABWC_BIN" != "$OPT_BIN/labwc" ]; then
 fi
 
 echo "Installing shared libraries..."
+LIBINPUT_LIB=$(find "$PROJECT_DIR/subprojects/libinput/build" -maxdepth 1 -type f -name "libinput.so.10.*" 2>/dev/null | head -1)
+if [ -n "$LIBINPUT_LIB" ]; then
+    acopy "$LIBINPUT_LIB" "$OPT_LIB/$(basename "$LIBINPUT_LIB")"
+    ln -sf "$(basename "$LIBINPUT_LIB")" "$OPT_LIB/libinput.so.10"
+    echo "  $(basename "$LIBINPUT_LIB")"
+fi
 acopy "$BUILD/subprojects/libsingularity/libsingularity.so.0.1.0" \
       "$OPT_LIB/libsingularity.so.0.1.0"
 ln -sf libsingularity.so.0.1.0 "$OPT_LIB/libsingularity.so.0"

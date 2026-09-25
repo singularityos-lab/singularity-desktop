@@ -114,3 +114,7 @@
 	path = subprojects/singularity-gestures
 	url = https://github.com/singularityos-lab/singularity-gestures.git
 	branch = main
+[submodule "subprojects/libinput"]
+	path = subprojects/libinput
+	url = https://github.com/singularityos-lab/libinput.git
+	branch = singularity

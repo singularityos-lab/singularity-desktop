@@ -26,6 +26,7 @@ RUN apt-get update && \
       libdbusmenu-glib-dev \
       libdisplay-info-dev \
       libdrm-dev \
+      libevdev-dev \
       libfontconfig-dev \
       libgcrypt20-dev \
       libgdk-pixbuf-2.0-dev \
@@ -42,6 +43,7 @@ RUN apt-get update && \
       libinput-dev \
       libjson-glib-dev \
       libliftoff-dev \
+      libmtdev-dev \
       libnm-dev \
       libpam0g-dev \
       libpeas-2-dev \
@@ -59,8 +61,10 @@ RUN apt-get update && \
       libsoup-3.0-dev \
       libsystemd-dev \
       libtracker-sparql-3.0-dev \
+      libudev-dev \
       libupower-glib-dev \
       libvte-2.91-gtk4-dev \
+      libwacom-dev \
       libwayland-dev \
       libwebkitgtk-6.0-dev \
       libxcb-composite0-dev \
@@ -100,8 +104,19 @@ RUN meson setup build \
       -Dxwayland=enabled \
       --force-fallback-for=wlroots-0.20 && \
     meson compile -C subprojects/labwc/build && \
+    meson setup subprojects/libinput/build subprojects/libinput \
+      --prefix=/usr \
+      --buildtype=release \
+      -Ddocumentation=false \
+      -Ddebug-gui=false \
+      -Dtests=false \
+      -Dlibwacom=true \
+      -Dlua-plugins=disabled && \
+    meson compile -C subprojects/libinput/build && \
     DESTDIR=/stage meson install -C build && \
     DESTDIR=/stage meson install -C subprojects/labwc/build && \
+    find subprojects/libinput/build -maxdepth 1 \( -type f -o -type l \) -name 'libinput.so.10*' \
+      -exec cp -a {} /stage/opt/singularity/lib/ \; && \
     glib-compile-schemas /stage/opt/singularity/share/glib-2.0/schemas
 
 COPY cpak/singularity-cpak-headless-session /stage/opt/singularity/bin/singularity-cpak-headless-session

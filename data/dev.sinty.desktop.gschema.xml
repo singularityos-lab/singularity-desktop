@@ -535,10 +535,31 @@
     <key name="natural-scrolling" type="b">
       <default>false</default>
       <summary>Natural scrolling on touchpad</summary>
+      <description>Applies to two-finger scrolling. Edge scrolling has its own direction, see touchpad-edge-natural-scroll.</description>
+    </key>
+    <key name="touchpad-two-finger-scroll" type="b">
+      <default>true</default>
+      <summary>Two-finger scrolling</summary>
+      <description>Scroll with two fingers anywhere on the touchpad.</description>
+    </key>
+    <key name="touchpad-edge-scroll" type="b">
+      <default>false</default>
+      <summary>Edge scrolling</summary>
+      <description>Scroll with one finger along the right or bottom edge of the touchpad. Works together with two-finger scrolling.</description>
+    </key>
+    <key name="touchpad-edge-natural-scroll" type="b">
+      <default>false</default>
+      <summary>Natural edge scrolling</summary>
+      <description>Reverse the edge scrolling direction, independently of two-finger scrolling.</description>
+    </key>
+    <key name="touchpad-circular-scroll" type="b">
+      <default>false</default>
+      <summary>Circular scrolling</summary>
+      <description>Keep scrolling by moving in a circle after starting on an edge: vertically from the right edge, horizontally from the bottom edge.</description>
     </key>
     <key name="touchpad-scroll-speed" type="d">
       <default>1.0</default>
-      <range min="0.25" max="3.0"/>
+      <range min="0.25" max="1.75"/>
       <summary>Touchpad scroll speed</summary>
       <description>Multiplier applied to touchpad scrolling. 1.0 is the default speed.</description>
     </key>
