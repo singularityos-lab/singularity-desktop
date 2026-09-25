@@ -568,6 +568,57 @@
       <summary>Touchpad scroll speed</summary>
       <description>Multiplier applied to touchpad scrolling. 1.0 is the default speed.</description>
     </key>
+    <key name="spell-check-enabled" type="b">
+      <default>true</default>
+      <summary>Check spelling</summary>
+      <description>Underline misspelled words in text fields and offer corrections in their context menu.</description>
+    </key>
+    <key name="spell-autocorrect" type="b">
+      <default>false</default>
+      <summary>Correct spelling automatically</summary>
+      <description>Replace a misspelled word with the best suggestion when Space is pressed. Backspace right after restores the original word.</description>
+    </key>
+    <key name="spell-suggestions" type="b">
+      <default>true</default>
+      <summary>Show spelling suggestions</summary>
+      <description>Show corrections for the word being typed, under the word or above the screen keyboard.</description>
+    </key>
+    <key name="press-hold-accents" type="b">
+      <default>true</default>
+      <summary>Hold keys for accents</summary>
+      <description>Holding a letter shows its accented variants instead of repeating it.</description>
+    </key>
+    <key name="spell-check-languages" type="as">
+      <default>[]</default>
+      <summary>Spell checking languages</summary>
+      <description>Dictionary language tags such as en_US or it_IT; empty follows the session language.</description>
+    </key>
+    <key name="screen-keyboard-enabled" type="b">
+      <default>false</default>
+      <summary>Screen keyboard</summary>
+      <description>Show the on-screen keyboard docked at the bottom of the screen.</description>
+    </key>
+    <key name="display-brightness-limits" type="a{s(dd)}">
+      <default>{}</default>
+      <summary>Brightness limits per display</summary>
+      <description>Minimum and maximum brightness percentage for each display connector; the brightness level is mapped into this range.</description>
+    </key>
+    <key name="mouse-scroll-speed" type="d">
+      <default>1.0</default>
+      <range min="0.25" max="1.75"/>
+      <summary>Mouse scroll speed</summary>
+      <description>Multiplier applied to mouse wheel scrolling. 1.0 is the default speed.</description>
+    </key>
+    <key name="allow-tearing" type="b">
+      <default>false</default>
+      <summary>Allow tearing</summary>
+      <description>Let fullscreen windows that request it present without waiting for vblank, lowering input lag.</description>
+    </key>
+    <key name="xwayland-native-scaling" type="b">
+      <default>false</default>
+      <summary>Sharp scaling for X11 apps</summary>
+      <description>Let X11 apps render at the display resolution instead of being upscaled. Apps that ignore Xft.dpi appear smaller.</description>
+    </key>
     <key name="icon-theme" type="s">
       <default>"Singularity"</default>
       <summary>Icon theme name</summary>

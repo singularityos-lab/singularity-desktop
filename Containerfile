@@ -26,6 +26,7 @@ RUN apt-get update && \
       libdbusmenu-glib-dev \
       libdisplay-info-dev \
       libdrm-dev \
+      libenchant-2-dev \
       libevdev-dev \
       libfontconfig-dev \
       libgcrypt20-dev \

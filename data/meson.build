@@ -21,6 +21,14 @@ install_data(
   install_dir: get_option('datadir') / 'xdg-desktop-portal'
 )
 install_data(
+  'udev/60-singularity-ddc.rules',
+  install_dir: get_option('prefix') / 'lib' / 'udev' / 'rules.d'
+)
+install_data(
+  'udev/singularity-ddc.conf',
+  install_dir: get_option('prefix') / 'lib' / 'modules-load.d'
+)
+install_data(
   'accountsservice/com.singularity.Desktop.xml',
   install_dir: get_option('datadir') / 'accountsservice' / 'interfaces'
 )

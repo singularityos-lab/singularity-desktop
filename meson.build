@@ -40,6 +40,7 @@ subproject('singularity-shell')
 
 subproject('singularity-files')
 subproject('singularity-calculator')
+subproject('singularity-clock')
 subproject('singularity-greeter')
 subproject('singularity-splash')
 subproject('singularity-leafs')

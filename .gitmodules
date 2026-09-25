@@ -118,3 +118,6 @@
 	path = subprojects/libinput
 	url = https://github.com/singularityos-lab/libinput.git
 	branch = singularity
+[submodule "subprojects/singularity-clock"]
+	path = subprojects/singularity-clock
+	url = https://github.com/singularityos-lab/singularity-clock.git

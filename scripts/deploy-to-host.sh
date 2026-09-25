@@ -100,7 +100,7 @@ if [ -f "$BUILD/subprojects/singularity-polkit-agent/singularity-polkit-auth-hel
     echo "  singularity-polkit-auth-helper"
 fi
 
-APP_LIST="singularity-browser singularity-files singularity-edit singularity-calculator \
+APP_LIST="singularity-browser singularity-files singularity-edit singularity-calculator singularity-clock \
           singularity-photos singularity-store singularity-monitor singularity-write \
           singularity-videos singularity-leafs singularity-calendar singularity-music \
           singularity-dconf singularity-demo singularity-keyboard-reset \
@@ -443,6 +443,15 @@ else
         command -v systemctl >/dev/null 2>&1 && systemctl daemon-reload 2>/dev/null || true
     fi
 fi
+
+install -D -m 0644 "$PROJECT_DIR/data/udev/60-singularity-ddc.rules" /etc/udev/rules.d/60-singularity-ddc.rules
+install -D -m 0644 "$PROJECT_DIR/data/udev/singularity-ddc.conf" /etc/modules-load.d/singularity-ddc.conf
+modprobe i2c-dev 2>/dev/null || true
+if command -v udevadm >/dev/null 2>&1; then
+    udevadm control --reload 2>/dev/null || true
+    udevadm trigger --subsystem-match=i2c-dev 2>/dev/null || true
+fi
+echo "  external display brightness (DDC/CI) access"
 
 echo "Installing per-user config for $REAL_USER..."
 
