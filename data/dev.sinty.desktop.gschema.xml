@@ -536,6 +536,12 @@
       <default>false</default>
       <summary>Natural scrolling on touchpad</summary>
     </key>
+    <key name="touchpad-scroll-speed" type="d">
+      <default>1.0</default>
+      <range min="0.25" max="3.0"/>
+      <summary>Touchpad scroll speed</summary>
+      <description>Multiplier applied to touchpad scrolling. 1.0 is the default speed.</description>
+    </key>
     <key name="icon-theme" type="s">
       <default>"Singularity"</default>
       <summary>Icon theme name</summary>
