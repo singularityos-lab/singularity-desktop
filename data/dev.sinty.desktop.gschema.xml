@@ -251,6 +251,11 @@
       <summary>Static Workspace Count</summary>
       <description>Number of workspaces when dynamic mode is disabled.</description>
     </key>
+    <key name="workspaces-per-monitor" type="b">
+      <default>false</default>
+      <summary>Workspaces per display</summary>
+      <description>When enabled, every display has its own workspaces and switches them independently of the other displays.</description>
+    </key>
 
     <key name="sound-output-device" type="s">
       <default>'default'</default>
