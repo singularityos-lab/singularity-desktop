@@ -116,6 +116,24 @@
       <default>''</default>
       <summary>URI of the background picture</summary>
     </key>
+    <key name="wallpaper-rotation-min-width" type="i">
+      <range min="1" max="16384"/>
+      <default>1280</default>
+      <summary>Minimum wallpaper width</summary>
+    </key>
+    <key name="wallpaper-rotation-min-height" type="i">
+      <range min="1" max="16384"/>
+      <default>720</default>
+      <summary>Minimum wallpaper height</summary>
+    </key>
+    <key name="wallpaper-rotation-match-aspect" type="b">
+      <default>false</default>
+      <summary>Prefer wallpapers matching the display aspect ratio</summary>
+    </key>
+    <key name="wallpaper-rotation-favor-favorites" type="b">
+      <default>true</default>
+      <summary>Favor starred wallpapers during rotation</summary>
+    </key>
     <key name="background-attribution-title" type="s">
       <default>''</default>
       <summary>Attribution title for the current background</summary>
