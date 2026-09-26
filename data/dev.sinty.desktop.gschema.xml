@@ -116,6 +116,22 @@
       <default>''</default>
       <summary>URI of the background picture</summary>
     </key>
+    <key name="wallpaper-history-back" type="as">
+      <default>[]</default>
+      <summary>Wallpaper back history</summary>
+    </key>
+    <key name="wallpaper-history-forward" type="as">
+      <default>[]</default>
+      <summary>Wallpaper forward history</summary>
+    </key>
+    <key name="wallpaper-history-current" type="s">
+      <default>''</default>
+      <summary>Current wallpaper history entry</summary>
+    </key>
+    <key name="wallpaper-favorites" type="as">
+      <default>[]</default>
+      <summary>Favorite wallpaper paths</summary>
+    </key>
     <key name="background-attribution-title" type="s">
       <default>''</default>
       <summary>Attribution title for the current background</summary>
