@@ -299,6 +299,15 @@
       <description>Whether to show the wallpaper title and author on the desktop background.</description>
     </key>
 
+    <key name="wallpaper-attribution-position" type="s">
+      <default>'bottom-left'</default>
+      <summary>Wallpaper Info Position</summary>
+      <description>Which screen quadrant the wallpaper title/author overlay
+        anchors to: "top-left", "top-right", "bottom-left", or
+        "bottom-right". Independent of whether it's shown at all (see
+        show-wallpaper-attribution).</description>
+    </key>
+
     <key name="show-battery-percentage" type="b">
       <default>false</default>
       <summary>Show Battery Percentage</summary>
