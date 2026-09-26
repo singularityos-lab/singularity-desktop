@@ -116,6 +116,26 @@
       <default>''</default>
       <summary>URI of the background picture</summary>
     </key>
+    <key name="wallpaper-effect" type="s">
+      <choices>
+        <choice value="none"/>
+        <choice value="grayscale"/>
+        <choice value="blur"/>
+        <choice value="oil-paint"/>
+        <choice value="quote"/>
+      </choices>
+      <default>'none'</default>
+      <summary>Wallpaper image effect</summary>
+    </key>
+    <key name="wallpaper-effect-blur-radius" type="i">
+      <range min="1" max="64"/>
+      <default>8</default>
+      <summary>Wallpaper blur radius</summary>
+    </key>
+    <key name="wallpaper-effect-quote-text" type="s">
+      <default>''</default>
+      <summary>Wallpaper quote overlay text</summary>
+    </key>
     <key name="background-attribution-title" type="s">
       <default>''</default>
       <summary>Attribution title for the current background</summary>
