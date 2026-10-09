@@ -6,6 +6,15 @@
       <summary>Record screen time</summary>
       <description>Record how long each app is used, for Wellbeing and parental controls. The data stays on this computer.</description>
     </key>
+    <key name="break-reminder-enabled" type="b">
+      <default>false</default>
+      <summary>Remind me to take breaks</summary>
+    </key>
+    <key name="break-reminder-minutes" type="i">
+      <range min="15" max="180"/>
+      <default>60</default>
+      <summary>Minutes of continuous use before a break reminder</summary>
+    </key>
     <key name="pinned-apps" type="as">
       <default>['dev.sinty.files.desktop', 'dev.sinty.photos.desktop', 'dev.sinty.music.desktop', 'dev.sinty.store.desktop', 'dev.sinty.write.desktop', 'dev.sinty.calculator.desktop']</default>
       <summary>Pinned Applications</summary>
