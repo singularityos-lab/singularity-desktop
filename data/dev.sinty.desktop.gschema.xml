@@ -636,6 +636,37 @@
       <summary>Show panel on all monitors</summary>
       <description>When enabled, the top panel appears on every connected monitor.</description>
     </key>
+    <key name="sensors-interval-seconds" type="i">
+      <range min="1" max="60"/>
+      <default>2</default>
+      <summary>Sensors polling interval</summary>
+      <description>Seconds between sensor reads for the sensors indicator.</description>
+    </key>
+    <key name="sensors-show-frequency" type="b">
+      <default>true</default>
+      <summary>Show CPU clock frequency</summary>
+      <description>Whether the sensors indicator includes the current CPU clock speed.</description>
+    </key>
+    <key name="sensors-show-utilization" type="b">
+      <default>true</default>
+      <summary>Show utilization</summary>
+      <description>Whether the sensors indicator includes CPU and memory usage.</description>
+    </key>
+    <key name="sensors-grouped" type="b">
+      <default>true</default>
+      <summary>Group sensors by family</summary>
+      <description>Whether the sensors popover shows one aggregate row per sensor family.</description>
+    </key>
+    <key name="sensors-gpu-zone" type="s">
+      <default>""</default>
+      <summary>GPU thermal zone</summary>
+      <description>Thermal zone name to use for the GPU. Empty means autodetect.</description>
+    </key>
+    <key name="sensors-cpu-zone" type="s">
+      <default>""</default>
+      <summary>CPU thermal zone</summary>
+      <description>Thermal zone name to use for the CPU. Empty means autodetect.</description>
+    </key>
     <key name="hot-corner-top-left" type="s">
       <default>'workspaces'</default>
       <summary>Hot corner action for top-left</summary>
