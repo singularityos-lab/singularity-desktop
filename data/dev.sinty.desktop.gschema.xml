@@ -1031,6 +1031,11 @@
       <summary>Mouse scroll speed</summary>
       <description>Multiplier applied to mouse wheel scrolling. 1.0 is the default speed.</description>
     </key>
+    <key name="background-apps" type="b">
+      <default>false</default>
+      <summary>Lighter background apps</summary>
+      <description>Give apps whose windows are all hidden less processor, disk and memory, and let their windows stop drawing.</description>
+    </key>
     <key name="allow-tearing" type="b">
       <default>false</default>
       <summary>Allow tearing</summary>
