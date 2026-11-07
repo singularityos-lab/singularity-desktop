@@ -1036,6 +1036,11 @@
       <summary>Lighter background apps</summary>
       <description>Give apps whose windows are all hidden less processor, disk and memory, and let their windows stop drawing.</description>
     </key>
+    <key name="battery-refresh-rate" type="b">
+      <default>true</default>
+      <summary>Lower refresh rate on battery</summary>
+      <description>Run built-in screens at 60 Hz while the computer runs on battery, and at their chosen refresh rate again once it is plugged in.</description>
+    </key>
     <key name="allow-tearing" type="b">
       <default>false</default>
       <summary>Allow tearing</summary>
