@@ -951,11 +951,12 @@
     <key name="input-method-engines" type="as">
       <default>[]</default>
       <summary>Input methods</summary>
-      <description>Input method engines to switch between, as framework:engine such as fcitx5:pinyin or ibus:hangul.</description>
+      <description>Input method engines to switch between, as framework:engine such as sinty:pinyin, fcitx5:mozc or ibus:hangul.</description>
     </key>
     <key name="input-method-framework" type="s">
       <choices>
         <choice value="auto"/>
+        <choice value="sinty"/>
         <choice value="fcitx5"/>
         <choice value="ibus"/>
       </choices>
