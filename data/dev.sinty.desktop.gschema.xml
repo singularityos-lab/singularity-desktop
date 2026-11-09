@@ -395,6 +395,11 @@
       <summary>Developer Mode</summary>
       <description>Whether the Developer settings page is shown.</description>
     </key>
+    <key name="settings-page-usage" type="a{si}">
+      <default>{}</default>
+      <summary>Settings Page Usage</summary>
+      <description>How many times each Settings page was opened, used to show the most used pages first.</description>
+    </key>
     <key name="bootloader-unlock-allowed" type="b">
       <default>false</default>
       <summary>Allow Bootloader Unlock</summary>
