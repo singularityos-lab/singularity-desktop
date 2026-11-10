@@ -90,27 +90,13 @@ install() {
         return 0
     fi
 
-    run mkdir -p "$FPRINT_LIB" "$PREFIX/libexec"
+    run mkdir -p "$FPRINT_LIB"
     acopy "$LIBFPRINT_STAGE/libfprint-2.so.2.0.0" "$FPRINT_LIB/libfprint-2.so.2.0.0"
     run ln -sf libfprint-2.so.2.0.0 "$FPRINT_LIB/libfprint-2.so.2"
     acopy "$LIBFPRINT_STAGE/libfprint-2-tod.so.1" "$FPRINT_LIB/libfprint-2-tod.so.1"
     acopy "$GUSB_STAGE/libgusb.so.2.0.10" "$FPRINT_LIB/libgusb.so.2.0.10"
     run ln -sf libgusb.so.2.0.10 "$FPRINT_LIB/libgusb.so.2"
     echo "  libfprint-TOD installed to $FPRINT_LIB"
-
-    acopy "$PROJECT_DIR/data/fprint/singularity-fprint-driver" "$HELPER"
-    run chmod 0755 "$HELPER"
-    echo "  singularity-fprint-driver"
-
-    if [ "$DRY_RUN" = 1 ]; then
-        echo "  would install $POLICY when /usr is writable"
-    elif mkdir -p "$(dirname "$POLICY")" 2>/dev/null && \
-         sed "s|@LIBEXECDIR@|$PREFIX/libexec|" "$PROJECT_DIR/data/fprint/dev.sinty.fprint-driver.policy" \
-             > "$POLICY" 2>/dev/null; then
-        echo "  polkit policy $POLICY"
-    else
-        echo "  polkit policy not installed (/usr is read-only); pkexec asks for the admin password instead"
-    fi
 
     local fprintd check_lib="$FPRINT_LIB"
     [ "$DRY_RUN" = 1 ] && check_lib="$LIBFPRINT_STAGE:$GUSB_STAGE"

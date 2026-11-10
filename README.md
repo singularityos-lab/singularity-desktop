@@ -122,7 +122,7 @@ systems keep working.
 
 When a reader needs a manufacturer driver that Singularity knows about,
 Settings > Users offers to install it. The driver is proprietary and is never
-shipped with Singularity: `singularity-fprint-driver` downloads it from the
+shipped with Singularity: the `sinty-desktopd` service downloads it from the
 manufacturer's or distribution's own URL, checks it against a pinned SHA-256,
 and only extracts the listed files. It accepts only the device IDs in its
 built-in catalog.
