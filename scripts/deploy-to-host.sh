@@ -343,12 +343,12 @@ acopy "$BUILD/subprojects/libsingularity/libsingularity.so.0.1.0" \
 ln -sf libsingularity.so.0.1.0 "$OPT_LIB/libsingularity.so.0"
 ln -sf libsingularity.so.0.1.0 "$OPT_LIB/libsingularity.so"
 
-if [ -f "$BUILD/subprojects/libsingularity/libsingularity-system.so.0.1.0" ]; then
-    acopy "$BUILD/subprojects/libsingularity/libsingularity-system.so.0.1.0" \
-          "$OPT_LIB/libsingularity-system.so.0.1.0"
-    ln -sf libsingularity-system.so.0.1.0 "$OPT_LIB/libsingularity-system.so.0"
-    ln -sf libsingularity-system.so.0.1.0 "$OPT_LIB/libsingularity-system.so"
-    echo "  libsingularity-system.so.0.1.0"
+if [ -f "$BUILD/subprojects/libsingularity/libsingularity-system.so.1.0.0" ]; then
+    acopy "$BUILD/subprojects/libsingularity/libsingularity-system.so.1.0.0" \
+          "$OPT_LIB/libsingularity-system.so.1.0.0"
+    ln -sf libsingularity-system.so.1.0.0 "$OPT_LIB/libsingularity-system.so.1"
+    ln -sf libsingularity-system.so.1.0.0 "$OPT_LIB/libsingularity-system.so"
+    echo "  libsingularity-system.so.1.0.0"
 fi
 
 SIT_LIB="$(find "${SIT_STAGE:-/nonexistent}" -path '*/lib/libgtk-4.so.1.*' -type f 2>/dev/null | head -n 1)"
