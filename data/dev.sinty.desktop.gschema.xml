@@ -829,6 +829,11 @@
       <summary>Natural scrolling on touchpad</summary>
       <description>Applies to two-finger scrolling. Edge scrolling has its own direction, see touchpad-edge-natural-scroll.</description>
     </key>
+    <key name="touchpad-tap-to-click" type="b">
+      <default>true</default>
+      <summary>Tap to click</summary>
+      <description>Treat a light tap on the touchpad as a click. Turn off for touchpads that click when you press them.</description>
+    </key>
     <key name="touchpad-two-finger-scroll" type="b">
       <default>true</default>
       <summary>Two-finger scrolling</summary>
