@@ -554,6 +554,19 @@
       <summary>Always Show the Accessibility Menu</summary>
       <description>Show the accessibility menu in the top bar even when no accessibility feature is on.</description>
     </key>
+    <key name="form-factor" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="desktop"/>
+        <choice value="tablet"/>
+        <choice value="phone"/>
+        <choice value="tv"/>
+        <choice value="watch"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Form factor</summary>
+      <description>How the shell and Singularity apps present themselves: desktop, tablet, phone, TV or watch. Auto keeps the desktop.</description>
+    </key>
     <key name="reduce-motion" type="b">
       <default>false</default>
       <summary>Reduce Motion</summary>
