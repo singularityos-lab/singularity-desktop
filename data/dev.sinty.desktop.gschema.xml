@@ -567,6 +567,11 @@
       <summary>Form factor</summary>
       <description>How the shell and Singularity apps present themselves: desktop, tablet, phone, TV or watch. Auto keeps the desktop.</description>
     </key>
+    <key name="output-form-factors" type="a{ss}">
+      <default>{}</default>
+      <summary>Form factor of each screen</summary>
+      <description>Maps a screen connector (for example HDMI-A-1) to how that screen behaves: desktop, tablet, phone, tv or watch. Screens not listed are detected from their size; the main screen follows form-factor.</description>
+    </key>
     <key name="reduce-motion" type="b">
       <default>false</default>
       <summary>Reduce Motion</summary>
