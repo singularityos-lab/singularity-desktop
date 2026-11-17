@@ -282,6 +282,11 @@
       <summary>Glass Tint</summary>
       <description>Percentage of the accent color mixed into glass and blur materials.</description>
     </key>
+    <key name="shell-accent-tint" type="b">
+      <default>false</default>
+      <summary>Tint the Top Bar and Dock</summary>
+      <description>Mix the accent color into the top bar and dock, using the Glass Tint amount.</description>
+    </key>
     <key name="glass-vibrancy" type="i">
       <range min="0" max="100"/>
       <default>50</default>
