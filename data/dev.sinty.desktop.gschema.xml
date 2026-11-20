@@ -940,6 +940,11 @@
       <summary>Correct spelling automatically</summary>
       <description>Replace a misspelled word with the best suggestion when Space is pressed. Backspace right after restores the original word.</description>
     </key>
+    <key name="keyboard-haptic-feedback" type="b">
+      <default>true</default>
+      <summary>Vibrate on key presses</summary>
+      <description>A short vibration on every key of the screen keyboard and the lock screen keypad, on devices with a vibration motor.</description>
+    </key>
     <key name="spell-suggestions" type="b">
       <default>true</default>
       <summary>Show spelling suggestions</summary>
