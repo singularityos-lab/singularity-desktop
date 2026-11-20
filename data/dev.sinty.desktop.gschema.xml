@@ -1155,15 +1155,17 @@
     </key>
     <key name="power-button-action" type="s">
       <choices>
+        <choice value="auto"/>
         <choice value="ask"/>
+        <choice value="screen-off"/>
         <choice value="suspend"/>
         <choice value="power-off"/>
         <choice value="lock"/>
         <choice value="nothing"/>
       </choices>
-      <default>'ask'</default>
+      <default>'auto'</default>
       <summary>When the power button is pressed</summary>
-      <description>ask shows the power off confirmation; suspend, power-off and lock act at once; nothing ignores the button.</description>
+      <description>auto turns the screen off on phones and watches and asks elsewhere; ask shows the power off confirmation; screen-off locks the session and turns the screen off until the next press; suspend, power-off and lock act at once; nothing ignores the button. While the screen is off, a press always turns it back on.</description>
     </key>
     <key name="updates-automatic-check" type="b">
       <default>true</default>
