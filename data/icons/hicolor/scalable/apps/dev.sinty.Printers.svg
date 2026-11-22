@@ -1,39 +1,30 @@
-<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="pr_body" x1="20" y1="84" x2="216" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f7f9fb"/><stop offset="0.6" stop-color="#d5dce4"/><stop offset="1" stop-color="#a9b4c0"/></linearGradient>
-<linearGradient id="pr_side" x1="0" y1="160" x2="0" y2="186" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8b97a4"/><stop offset="1" stop-color="#57626f"/></linearGradient>
-<linearGradient id="pr_top" x1="0" y1="84" x2="0" y2="104" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5b6b82"/><stop offset="1" stop-color="#2d394c"/></linearGradient>
-<linearGradient id="pr_slot" x1="0" y1="124" x2="0" y2="142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#131b2b"/><stop offset="1" stop-color="#2a3650"/></linearGradient>
-<linearGradient id="pr_paper" x1="0" y1="18" x2="0" y2="96" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3eaf1"/></linearGradient>
-<linearGradient id="pr_out" x1="0" y1="132" x2="0" y2="224" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e6ecf2"/><stop offset="0.25" stop-color="#ffffff"/><stop offset="1" stop-color="#f1f5f9"/></linearGradient>
-<linearGradient id="pr_photo" x1="84" y1="150" x2="152" y2="196" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#58c5f0"/><stop offset="0.55" stop-color="#3c7fe8"/><stop offset="1" stop-color="#6a3fd6"/></linearGradient>
-<linearGradient id="pr_hill" x1="0" y1="172" x2="0" y2="198" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff9f5a"/><stop offset="1" stop-color="#e8612c"/></linearGradient>
-<linearGradient id="pr_hill2" x1="0" y1="178" x2="0" y2="198" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ec4fa6"/><stop offset="1" stop-color="#b3226f"/></linearGradient>
-<clipPath id="pr_clip"><rect x="80" y="156" width="76" height="46" rx="5"/></clipPath>
-<filter id="prshadow" x="-20" y="-20" width="276" height="276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#080f1f" flood-opacity="0.5"/></filter>
-</defs>
-<path d="M62 92 L70 26 Q71 18 79 18 L157 18 Q165 18 166 26 L174 92 Z" fill="url(#pr_paper)"/>
-<rect x="86" y="36" width="44" height="7" rx="3.5" fill="#9fb2c4"/>
-<rect x="86" y="52" width="64" height="5" rx="2.5" fill="#b9c3cf"/>
-<rect x="85" y="64" width="54" height="5" rx="2.5" fill="#b9c3cf"/>
-<g filter="url(#prshadow)">
-<rect x="18" y="94" width="200" height="92" rx="22" fill="url(#pr_side)"/>
-<rect x="18" y="84" width="200" height="92" rx="22" fill="url(#pr_body)"/>
-</g>
-<path d="M40 84 H196 Q218 84 218 106 V108 H18 V106 Q18 84 40 84 Z" fill="url(#pr_top)"/>
-<rect x="40" y="90" width="156" height="4" rx="2" fill="#ffffff" fill-opacity="0.18"/>
-<rect x="18" y="108" width="200" height="3" fill="#ffffff" fill-opacity="0.7"/>
-<circle cx="192" cy="126" r="6" fill="#39d98a"/>
-<rect x="40" y="122" width="30" height="8" rx="4" fill="#8a96a4"/>
-<rect x="38" y="136" width="160" height="16" rx="8" fill="url(#pr_slot)"/>
-<path d="M60 144 H176 L168 214 Q167 224 157 224 H79 Q69 224 68 214 Z" fill="url(#pr_out)"/>
-<path d="M60 144 H176 L168 214 Q167 224 157 224 H79 Q69 224 68 214 Z" stroke="#8a96a4" stroke-opacity="0.45" stroke-width="2"/>
-<path d="M60 144 H176 L175 152 H61 Z" fill="#8a96a4" fill-opacity="0.35"/>
-<g clip-path="url(#pr_clip)">
-<rect x="80" y="156" width="76" height="46" fill="url(#pr_photo)"/>
-<circle cx="136" cy="170" r="7" fill="#ffd23f"/>
-<path d="M76 200 L102 172 Q106 168 110 172 L132 196 L76 204 Z" fill="url(#pr_hill)"/>
-<path d="M110 200 L134 180 Q138 177 142 180 L162 198 L110 204 Z" fill="url(#pr_hill2)"/>
-</g>
-<rect x="84" y="210" width="40" height="5" rx="2.5" fill="#b9c3cf"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="236" height="236" viewBox="0.027650 0.026846 235.944700 235.955257" preserveAspectRatio="none"><g fill="none"><defs><linearGradient id="l1-pr_paper" x1="0" y1="18" x2="0" y2="96" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#e3eaf1" /></linearGradient>
+</defs><path d="M62 92 L70 26 Q71 18 79 18 L157 18 Q165 18 166 26 L174 92 Z" fill="url(#l1-pr_paper)" />
+</g><g fill="none"><rect x="86" y="36" width="44" height="7" rx="3.5" fill="#9fb2c4" />
+</g><g fill="none"><rect x="86" y="52" width="64" height="5" rx="2.5" fill="#b9c3cf" />
+</g><g fill="none"><rect x="85" y="64" width="54" height="5" rx="2.5" fill="#b9c3cf" />
+</g><defs><filter id="shadow5" x="-20" y="-20" width="276" height="276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#080f1f" flood-opacity="0.5"/></filter></defs><g filter="url(#shadow5)"><g fill="none"><defs><linearGradient id="l6-pr_side" x1="0" y1="160" x2="0" y2="186" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8b97a4" /><stop offset="1" stop-color="#57626f" /></linearGradient>
+</defs><rect x="18" y="94" width="200" height="92" rx="22" fill="url(#l6-pr_side)" />
+</g><g fill="none"><defs><linearGradient id="l7-pr_body" x1="20" y1="84" x2="216" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f7f9fb" /><stop offset="0.6" stop-color="#d5dce4" /><stop offset="1" stop-color="#a9b4c0" /></linearGradient>
+</defs><rect x="18" y="84" width="200" height="92" rx="22" fill="url(#l7-pr_body)" />
+</g></g><g fill="none"><defs><linearGradient id="l8-pr_top" x1="0" y1="84" x2="0" y2="104" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5b6b82" /><stop offset="1" stop-color="#2d394c" /></linearGradient>
+</defs><path d="M40 84 H196 Q218 84 218 106 V108 H18 V106 Q18 84 40 84 Z" fill="url(#l8-pr_top)" />
+</g><g fill="none"><rect x="40" y="90" width="156" height="4" rx="2" fill="#ffffff" fill-opacity="0.18" />
+</g><g fill="none"><rect x="18" y="108" width="200" height="3" fill="#ffffff" fill-opacity="0.7" />
+</g><g fill="none"><circle cx="192" cy="126" r="6" fill="#39d98a" />
+</g><g fill="none"><rect x="40" y="122" width="30" height="8" rx="4" fill="#8a96a4" />
+</g><g fill="none"><defs><linearGradient id="l13-pr_slot" x1="0" y1="124" x2="0" y2="142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#131b2b" /><stop offset="1" stop-color="#2a3650" /></linearGradient>
+</defs><rect x="38" y="136" width="160" height="16" rx="8" fill="url(#l13-pr_slot)" />
+</g><g fill="none"><defs><linearGradient id="l14-pr_out" x1="0" y1="132" x2="0" y2="224" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e6ecf2" /><stop offset="0.25" stop-color="#ffffff" /><stop offset="1" stop-color="#f1f5f9" /></linearGradient>
+</defs><path d="M60 144 H176 L168 214 Q167 224 157 224 H79 Q69 224 68 214 Z" fill="url(#l14-pr_out)" />
+</g><g fill="none"><path d="M60 144 H176 L168 214 Q167 224 157 224 H79 Q69 224 68 214 Z" stroke="#8a96a4" stroke-opacity="0.45" stroke-width="2" />
+</g><g fill="none"><path d="M60 144 H176 L175 152 H61 Z" fill="#8a96a4" fill-opacity="0.35" />
+</g><defs><clipPath id="clip17"><path d="M85 156 H151 A5 5 0 0 1 156 161 V197 A5 5 0 0 1 151 202 H85 A5 5 0 0 1 80 197 V161 A5 5 0 0 1 85 156 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#clip17)"><g fill="none"><defs><linearGradient id="l18-pr_photo" x1="84" y1="150" x2="152" y2="196" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#58c5f0" /><stop offset="0.55" stop-color="#3c7fe8" /><stop offset="1" stop-color="#6a3fd6" /></linearGradient>
+</defs><rect x="80" y="156" width="76" height="46" fill="url(#l18-pr_photo)" />
+</g><g fill="none"><circle cx="136" cy="170" r="7" fill="#ffd23f" />
+</g><g fill="none"><defs><linearGradient id="l20-pr_hill" x1="0" y1="172" x2="0" y2="198" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff9f5a" /><stop offset="1" stop-color="#e8612c" /></linearGradient>
+</defs><path d="M76 200 L102 172 Q106 168 110 172 L132 196 L76 204 Z" fill="url(#l20-pr_hill)" />
+</g><g fill="none"><defs><linearGradient id="l21-pr_hill2" x1="0" y1="178" x2="0" y2="198" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ec4fa6" /><stop offset="1" stop-color="#b3226f" /></linearGradient>
+</defs><path d="M110 200 L134 180 Q138 177 142 180 L162 198 L110 204 Z" fill="url(#l21-pr_hill2)" />
+</g></g><g fill="none"><rect x="84" y="210" width="40" height="5" rx="2.5" fill="#b9c3cf" />
+</g></svg>

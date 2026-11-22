@@ -1,28 +1,15 @@
-<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="wsn_body" x1="0" y1="44" x2="0" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d0d8e3"/><stop offset="0.55" stop-color="#b9c4d3"/><stop offset="1" stop-color="#a3b0c2"/></linearGradient>
-<linearGradient id="wsn_lip" x1="0" y1="170" x2="0" y2="188" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7a889e"/><stop offset="1" stop-color="#637188"/></linearGradient>
-<radialGradient id="wsn_bloom" cx="46" cy="52" r="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0.35"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
-<filter id="wsn_sh" x="8" y="24" width="96" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#27354d" flood-opacity="0.4"/>
-</filter>
-<linearGradient id="wsw_body" x1="0" y1="44" x2="0" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f3f7fc"/><stop offset="0.55" stop-color="#e0e8f4"/><stop offset="1" stop-color="#c7d3e4"/></linearGradient>
-<linearGradient id="wsw_lip" x1="0" y1="170" x2="0" y2="188" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7f91ad"/><stop offset="1" stop-color="#667895"/></linearGradient>
-<radialGradient id="wsw_bloom" cx="106" cy="52" r="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0.5"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
-<filter id="wsw_sh" x="68" y="24" width="160" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#27354d" flood-opacity="0.4"/>
-</filter>
-</defs>
-<g filter="url(#wsn_sh)">
-<rect x="32" y="52" width="48" height="136" rx="18" fill="url(#wsn_lip)"/>
-<rect x="32" y="44" width="48" height="136" rx="18" fill="url(#wsn_body)"/>
-</g>
-<rect x="32" y="44" width="48" height="136" rx="18" fill="url(#wsn_bloom)"/>
-<rect x="34" y="46" width="44" height="132" rx="16" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
-<g filter="url(#wsw_sh)">
-<rect x="92" y="52" width="112" height="136" rx="18" fill="url(#wsw_lip)"/>
-<rect x="92" y="44" width="112" height="136" rx="18" fill="url(#wsw_body)"/>
-</g>
-<rect x="92" y="44" width="112" height="136" rx="18" fill="url(#wsw_bloom)"/>
-<rect x="94" y="46" width="108" height="132" rx="16" stroke="white" stroke-opacity="0.55" stroke-width="1.5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="236" height="236" viewBox="0.267380 0.293930 235.465241 235.552716" preserveAspectRatio="none"><defs><filter id="shadow1" x="8" y="24" width="96" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#27354d" flood-opacity="0.4"/></filter></defs><g filter="url(#shadow1)"><g fill="none"><defs><linearGradient id="l2-wsn_lip" x1="0" y1="170" x2="0" y2="188" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7a889e" /><stop offset="1" stop-color="#637188" /></linearGradient>
+</defs><rect x="32" y="52" width="48" height="136" rx="18" fill="url(#l2-wsn_lip)" />
+</g><g fill="none"><defs><linearGradient id="l3-wsn_body" x1="0" y1="44" x2="0" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d0d8e3" /><stop offset="0.55" stop-color="#b9c4d3" /><stop offset="1" stop-color="#a3b0c2" /></linearGradient>
+</defs><rect x="32" y="44" width="48" height="136" rx="18" fill="url(#l3-wsn_body)" />
+</g></g><g fill="none"><defs><radialGradient id="l4-wsn_bloom" cx="46" cy="52" r="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0.35" /><stop offset="1" stop-color="white" stop-opacity="0" /></radialGradient>
+</defs><rect x="32" y="44" width="48" height="136" rx="18" fill="url(#l4-wsn_bloom)" />
+</g><g fill="none"><rect x="34" y="46" width="44" height="132" rx="16" stroke="white" stroke-opacity="0.35" stroke-width="1.5" />
+</g><defs><filter id="shadow6" x="68" y="24" width="160" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#27354d" flood-opacity="0.4"/></filter></defs><g filter="url(#shadow6)"><g fill="none"><defs><linearGradient id="l7-wsw_lip" x1="0" y1="170" x2="0" y2="188" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7f91ad" /><stop offset="1" stop-color="#667895" /></linearGradient>
+</defs><rect x="92" y="52" width="112" height="136" rx="18" fill="url(#l7-wsw_lip)" />
+</g><g fill="none"><defs><linearGradient id="l8-wsw_body" x1="0" y1="44" x2="0" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f3f7fc" /><stop offset="0.55" stop-color="#e0e8f4" /><stop offset="1" stop-color="#c7d3e4" /></linearGradient>
+</defs><rect x="92" y="44" width="112" height="136" rx="18" fill="url(#l8-wsw_body)" />
+</g></g><g fill="none"><defs><radialGradient id="l9-wsw_bloom" cx="106" cy="52" r="122" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0.5" /><stop offset="1" stop-color="white" stop-opacity="0" /></radialGradient>
+</defs><rect x="92" y="44" width="112" height="136" rx="18" fill="url(#l9-wsw_bloom)" />
+</g><g fill="none"><rect x="94" y="46" width="108" height="132" rx="16" stroke="white" stroke-opacity="0.55" stroke-width="1.5" />
+</g></svg>
