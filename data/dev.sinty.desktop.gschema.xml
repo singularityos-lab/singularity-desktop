@@ -1267,5 +1267,47 @@
       <summary>Tablet button actions</summary>
       <description>Action for each tablet button (Pad, Pad2 to Pad9): a mouse button, none, action:NAME for a shell action or key:SHORTCUT for a keyboard shortcut. Missing buttons are sent to the app.</description>
     </key>
+    <key name="hub-enabled" type="b">
+      <default>true</default>
+      <summary>Hub on the home screen</summary>
+      <description>On phones and tablets, swiping right on the first home page reveals the Hub with mail, messages, calls and notifications.</description>
+    </key>
+    <key name="hub-show-notifications" type="b">
+      <default>true</default>
+      <summary>Notifications in the Hub</summary>
+      <description>List notifications from apps that do not publish their own Hub account.</description>
+    </key>
+    <key name="hub-hidden-accounts" type="as">
+      <default>[]</default>
+      <summary>Accounts hidden from the Hub</summary>
+      <description>Hub account ids whose items are kept out of the combined list. They stay reachable from the account list.</description>
+    </key>
+    <key name="hub-swipe-start" type="s">
+      <choices>
+        <choice value="read"/>
+        <choice value="flag"/>
+        <choice value="delete"/>
+        <choice value="none"/>
+      </choices>
+      <default>"read"</default>
+      <summary>Hub swipe right action</summary>
+      <description>What swiping a Hub item to the right does.</description>
+    </key>
+    <key name="hub-swipe-end" type="s">
+      <choices>
+        <choice value="read"/>
+        <choice value="flag"/>
+        <choice value="delete"/>
+        <choice value="none"/>
+      </choices>
+      <default>"delete"</default>
+      <summary>Hub swipe left action</summary>
+      <description>What swiping a Hub item to the left does.</description>
+    </key>
+    <key name="hub-priority-senders" type="as">
+      <default>[]</default>
+      <summary>Priority Hub senders</summary>
+      <description>Senders, addresses or numbers whose items are marked as priority in the Hub.</description>
+    </key>
   </schema>
 </schemalist>
