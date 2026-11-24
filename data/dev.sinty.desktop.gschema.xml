@@ -582,6 +582,11 @@
       <summary>Reduce Motion</summary>
       <description>Replace movement, scaling and bouncing with short fades across the desktop and Singularity apps.</description>
     </key>
+    <key name="animated-icons" type="b">
+      <default>true</default>
+      <summary>Animated Icons</summary>
+      <description>Play short motions in app and desktop icons.</description>
+    </key>
     <key name="motion-duration-scale" type="d">
       <range min="0.1" max="10.0"/>
       <default>1.0</default>
