@@ -1,0 +1,30 @@
+<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="apw_body" x1="0" y1="28" x2="0" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f3f7fc"/><stop offset="0.55" stop-color="#e0e8f4"/><stop offset="1" stop-color="#c7d3e4"/></linearGradient>
+<linearGradient id="apw_lip" x1="0" y1="28" x2="0" y2="208" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7f91ad"/><stop offset="1" stop-color="#667895"/></linearGradient>
+<linearGradient id="apn_body" x1="0" y1="28" x2="0" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d0d8e3"/><stop offset="0.55" stop-color="#b9c4d3"/><stop offset="1" stop-color="#a3b0c2"/></linearGradient>
+<linearGradient id="apn_lip" x1="0" y1="28" x2="0" y2="208" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7a889e"/><stop offset="1" stop-color="#637188"/></linearGradient>
+<radialGradient id="ap_bloom" cx="46" cy="36" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<filter id="ap_sh" x="8" y="8" width="220" height="224" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#27354d" flood-opacity="0.4"/>
+</filter>
+</defs>
+<g filter="url(#ap_sh)">
+<rect x="32" y="36" width="172" height="48" rx="15" fill="url(#apw_lip)"/>
+<rect x="32" y="28" width="172" height="48" rx="15" fill="url(#apw_body)"/>
+<rect x="32" y="98" width="110" height="110" rx="15" fill="url(#apn_lip)"/>
+<rect x="32" y="90" width="110" height="110" rx="15" fill="url(#apn_body)"/>
+<rect x="156" y="98" width="48" height="48" rx="15" fill="url(#apw_lip)"/>
+<rect x="156" y="90" width="48" height="48" rx="15" fill="url(#apw_body)"/>
+<rect x="156" y="160" width="48" height="48" rx="15" fill="url(#apn_lip)"/>
+<rect x="156" y="152" width="48" height="48" rx="15" fill="url(#apn_body)"/>
+</g>
+<rect x="32" y="28" width="172" height="48" rx="15" fill="url(#ap_bloom)"/>
+<rect x="32" y="90" width="110" height="110" rx="15" fill="url(#ap_bloom)"/>
+<rect x="156" y="90" width="48" height="48" rx="15" fill="url(#ap_bloom)"/>
+<rect x="156" y="152" width="48" height="48" rx="15" fill="url(#ap_bloom)"/>
+<rect x="33.5" y="29.5" width="169" height="45" rx="13.5" stroke="white" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="33.5" y="91.5" width="107" height="107" rx="13.5" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
+<rect x="157.5" y="91.5" width="45" height="45" rx="13.5" stroke="white" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="157.5" y="153.5" width="45" height="45" rx="13.5" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
+</svg>
